@@ -5,8 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script>
+        function display(div) {
+            document.getElementById("cadastrar").style.display;
+            document.getElementById("atualizar").style.display;
+
+            document.getElementById(div).style.display = 'block';
+        }
+    </script>
 </head>
 <body>
+    <div>
+        <button>Listar</button>
+        <button onclick="display('cadastrar');">Cadasrar</button>
+        <button onclick="display('atualizar');">Atualizar</button>
+        <button>Excluir</button>
+    </div>
     <div id="cadastrar">
         <form action="/insert.php" method="post">
             <label>Descrição</label><br>
