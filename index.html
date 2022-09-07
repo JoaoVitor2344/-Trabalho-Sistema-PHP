@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="cadastrar">
+        <form action="/insert.php" method="post">
+            <label>Descrição</label><br>
+            <input type="text" name="descricao"><br><br>
+            <label>Marca</label><br>
+            <input type="text" name="marca"><br><br>
+            <label>Estoque</label><br>
+            <input type="text" name="estoque"><br><br>
+            <label>Preco</label><br>
+            <input type="text" name="preco"><br><br>
+            <button>Cadastrar</button>
+        </form>
+    </div>
+    <div id="atualizar">
+        <form action="/update.php" method="post">
+            <label>Id</label><br>
+            <input type="text" name="id"><br><br>
+            <label>Descrição</label><br>
+            <input type="text" name="descricao"><br><br>
+            <label>Marca</label><br>
+            <input type="text" name="marca"><br><br>
+            <label>Estoque</label><br>
+            <input type="text" name="estoque"><br><br>
+            <label>Preco</label><br>
+            <input type="text" name="preco"><br><br>
+            <button>Atualizar</button>
+        </form>
+    </div>
+    <div>
+        <button onclick="window.location.href='select.php'">Listagem dos produtos cadastrados</button>
+    </div>
+</body>
+</html>
