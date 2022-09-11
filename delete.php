@@ -5,7 +5,8 @@
     $sql = "DELETE FROM produtos WHERE id = $id";
     if(mysqli_query($conn, $sql))
     {
-        echo 'Deletado';
+        echo "<script>alert('Produto Deletado!'); 
+        window.location.href='select.php'</script>";
     }
 
     mysqli_close($conn);

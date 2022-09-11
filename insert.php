@@ -7,9 +7,10 @@
     $preco = $_POST['preco'];
 
     $sql = "INSERT INTO produtos(descricao, marca, estoque, preco) VALUES('".$descricao."', '".$marca."', '".$estoque."', '".$preco."')";
-    if(mysqli_query($conn, $sql))
+    if(mysqli_query($conn, $sql)) 
     {
-        echo 'Cadatrado';
+        echo "<script>alert('Produto Cadastrado!'); 
+        window.location.href='index.html'</script>";
     }
 
     mysqli_close($conn);

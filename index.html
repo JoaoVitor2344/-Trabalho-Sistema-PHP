@@ -1,58 +1,69 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-
-    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Trabalho-Sistema-PHP</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/Login-Form-Basic.css">
+    
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js
+    "></script>
     <script>
-        function display(div) {
-            document.getElementById("cadastrar").style.display;
-            document.getElementById("atualizar").style.display;
-
-            document.getElementById(div).style.display = 'block';
+        function esconder(off, on) {
+            document.getElementById(off).style.display = 'none';
+            document.getElementById(on).style.display = 'block';
         }
     </script>
 </head>
+
 <body>
-    <div>
-        <button>Listar</button>
-        <button onclick="display('cadastrar');">Cadasrar</button>
-        <button onclick="display('atualizar');">Atualizar</button>
-        <button>Excluir</button>
+    <div id="buttons" class="row">
+        <div class="col" style="text-align: center;"><button class="btn btn-primary" type="button" style="margin-top: 10px;" onclick="esconder('atualizar', 'cadastrar')">Cadastrar</button><button class="btn btn-primary" type="button" style="margin-top: 10px; margin-right: 10px; margin-left: 10px;" onclick="window.location.href='/Trabalho-Sistema-PHP/select.php'">Listar</button><button class="btn btn-primary" type="button" style="margin-top: 10px;" onclick="esconder('cadastrar', 'atualizar')">Atualizar</button></div>
     </div>
-    <div id="cadastrar">
-        <form action="/insert.php" method="post">
-            <label>Descrição</label><br>
-            <input type="text" name="descricao"><br><br>
-            <label>Marca</label><br>
-            <input type="text" name="marca"><br><br>
-            <label>Estoque</label><br>
-            <input type="text" name="estoque"><br><br>
-            <label>Preco</label><br>
-            <input type="text" name="preco"><br><br>
-            <button>Cadastrar</button>
-        </form>
+    <div id="cadastrar" class="container" style="margin-top: 10px;">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6 col-xl-4">
+                <div class="card mb-5">
+                    <div class="card-body d-flex flex-column align-items-center">
+                        <div class="bs-icon-xl bs-icon-circle bs-icon-primary bs-icon my-4"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-person">
+                            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"></path>
+                        </svg></div>
+                        <form class="text-center" action="/Trabalho-Sistema-PHP/insert.php" method="post">
+                            <div class="mb-3"><input class="form-control" type="text" name="descricao" placeholder="Descrição"></div>
+                            <div class="mb-3"><input class="form-control" type="text" name="marca" placeholder="Marca"></div>
+                            <div class="mb-3"><input class="form-control" type="text" name="estoque" placeholder="Estoque"></div>
+                            <div class="mb-3"><input class="form-control" type="text" name="preco" placeholder="Preço"></div>
+                            <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit">Cadastrar</button></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div id="atualizar">
-        <form action="/update.php" method="post">
-            <label>Id</label><br>
-            <input type="text" name="id"><br><br>
-            <label>Descrição</label><br>
-            <input type="text" name="descricao"><br><br>
-            <label>Marca</label><br>
-            <input type="text" name="marca"><br><br>
-            <label>Estoque</label><br>
-            <input type="text" name="estoque"><br><br>
-            <label>Preco</label><br>
-            <input type="text" name="preco"><br><br>
-            <button>Atualizar</button>
-        </form>
+    <div id="atualizar" class="container" style="margin-top: 10px; display: none;">
+        <div class="row d-flex justify-content-center">
+            <div class="col-md-6 col-xl-4">
+                <div class="card mb-5">
+                    <div class="card-body d-flex flex-column align-items-center">
+                        <div class="bs-icon-xl bs-icon-circle bs-icon-primary bs-icon my-4"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="currentColor" viewBox="0 0 16 16" class="bi bi-person">
+                            <path d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10z"></path>
+                        </svg></div>
+                        <form class="text-center" action="update.php" method="post">
+                            <div class="mb-3"><input class="form-control" type="text" name="id" placeholder="Código"></div>
+                            <div class="mb-3"><input class="form-control" type="text" name="descricao" placeholder="Descrição"></div>
+                            <div class="mb-3"><input class="form-control" type="text" name="marca" placeholder="Marca"></div>
+                            <div class="mb-3"><input class="form-control" type="text" name="estoque" placeholder="Estoque"></div>
+                            <div class="mb-3"><input class="form-control" type="text" name="preco" placeholder="Preço"></div>
+                            <div class="mb-3"><button class="btn btn-primary d-block w-100" type="submit">Atualizar</button></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-    <div>
-        <button onclick="window.location.href='select.php'">Listagem dos produtos cadastrados</button>
-    </div>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 </body>
+
 </html>
